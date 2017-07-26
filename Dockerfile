@@ -1,6 +1,6 @@
 FROM golang
 ENV LOGSPOUT_VERSION=3.2
-ENV LOGSPOUT_DOWNLOAD_SHA256 fabd512f644c0af090da3f9209cb66282e9f55e5eabb706a349d99ba86dd9bea
+ENV LOGSPOUT_DOWNLOAD_SHA256=fabd512f644c0af090da3f9209cb66282e9f55e5eabb706a349d99ba86dd9bea
 ENV GOPATH=/go
 ENTRYPOINT ["/go/bin/logspout"]
 VOLUME /mnt/routes
@@ -18,3 +18,4 @@ WORKDIR /go/src/github.com/gliderlabs/logspout
 COPY ./modules.go /go/src/github.com/gliderlabs/logspout/modules.go
 RUN go get
 RUN go build -ldflags "-X main.Version=$(cat VERSION)" -o ./bin/logspout
+RUN cp /go/src/github.com/gliderlabs/logspout/bin/logspout /go/bin/logspout
