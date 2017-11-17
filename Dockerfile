@@ -1,8 +1,8 @@
 FROM golang:alpine as build
 MAINTAINER timo.taskinen@vincit.com
 LABEL maintainer "timo.taskinen@vincit.com"
-ENV LOGSPOUT_VERSION=3.2.2
-ENV LOGSPOUT_DOWNLOAD_SHA256=ac642b9564a874ce5d21ab6e8358a394d46a8b71ff4ded1f7b24289739b09b69
+ENV LOGSPOUT_VERSION=3.2.3
+ENV LOGSPOUT_DOWNLOAD_SHA256=be5a0b6c6805deb9e1dcc096409e2a0cf9302e1f25b7a163e25e25fd04e4a02d
 RUN mkdir -p /go/src
 WORKDIR /go/src
 VOLUME /mnt/routes
